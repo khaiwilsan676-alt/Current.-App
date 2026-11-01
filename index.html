@@ -31,7 +31,6 @@
 .halo{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255, 20, 97, 0.35), rgba(189, 16, 82, 0.15) 50%,transparent 70%);filter:drop-shadow(0 0 60px rgba(255, 20, 97, 0.5));animation:breathe 4s ease-in-out infinite}.ring{position:absolute;width:440px;height:200px;border:1.5px solid rgba(255, 77, 109, 0.3);border-radius:50%;transform:rotate(-27deg);box-shadow: 0 0 30px rgba(255, 77, 109, 0.2)}.ring.two{width:470px;height:270px;transform:rotate(55deg);border-color:rgba(255, 179, 198, 0.25)}.ring.three{width:320px;height:320px;border-style:dashed;border-color:rgba(255, 77, 109, 0.4);animation:spin 40s linear infinite}.orbit{position:absolute;padding:12px 22px;border:1px solid rgba(255, 77, 109, 0.4);border-radius:99px;background:rgba(255, 20, 97, 0.15);backdrop-filter:blur(15px);color:#ffe5ec;font:italic 15px "Playfair Display",serif;box-shadow:0 10px 40px rgba(255, 20, 97, 0.3)}.o1{top:60px;right:0;transform:rotate(7deg);animation:floatUp 4s ease-in-out infinite alternate}.o2{bottom:55px;left:0;transform:rotate(-7deg);animation:floatUp 4.5s ease-in-out infinite alternate-reverse}.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#ffb3c6;font-size:10px;font-weight:700;letter-spacing:.25em;text-align:center}.scroll i{display:block;margin:12px auto 0;width:30px;height:30px;border:1px solid rgba(255, 77, 109, 0.5);border-radius:50%;display:grid;place-items:center;color:var(--rose);font-style:normal;animation:nudge 1.8s infinite;box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);background:rgba(255,255,255,0.05)}.section{max-width:1120px;margin:auto;padding:110px 30px;position:relative}.head{text-align:center;margin-bottom:55px}.head .eyebrow{justify-content:center}.head h2{font:500 clamp(38px,5vw,60px)/1.1 "Playfair Display",serif;letter-spacing:-1.5px;margin:18px 0 12px;text-shadow: 0 0 25px rgba(255, 77, 109, 0.5)}.head h2 em{color:var(--rose)}.head p{color:var(--muted);font-size:15px;line-height:1.8}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .card{min-height:260px;padding:30px;border:1px solid rgba(255, 77, 109, 0.3);border-radius:26px;background:linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));backdrop-filter:blur(20px);position:relative;overflow:hidden;transition:all .4s cubic-bezier(.175,.885,.32,1.275);box-shadow: 0 10px 40px rgba(0,0,0,0.4)}.card:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-80px;bottom:-90px;background:rgba(255, 20, 97, 0.2);filter:blur(30px);transition: .4s}.card:hover{transform:translateY(-12px) scale(1.03);border-color:rgba(255, 77, 109, 0.9);box-shadow:0 25px 70px rgba(255, 20, 97, 0.3), inset 0 0 25px rgba(255, 77, 109, 0.2)}.card:hover:after{background:rgba(255, 20, 97, 0.4)}
 
-/* MODIFIED: Card Image (Bina kisi card ke) */
 .card-icon img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 8px 20px rgba(255, 20, 97, 0.6))}
 .card-icon{width:70px;height:70px;border:none;display:grid;place-items:center;background:transparent;box-shadow:none}
 
@@ -112,10 +111,9 @@
 
 
 /* =========================================
-   NAYA GIFT BOX, CHOCOLATE VOLCANO AUR TEDDY CSS 
+   GIFT BOX, CHOCOLATE VOLCANO AUR TEDDY CSS 
    ========================================= */
 
-/* Naya Floating Bubble Right Side pe */
 .floating-gift-bubble { 
     position: fixed; top: -250px; right: 15%; z-index: 99; width: 140px; height: 140px; 
     animation: floatDownGift 16s linear infinite; overflow: hidden; 
@@ -142,22 +140,20 @@
     100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 
-/* Dhakan (Lid) and Base structure using Clip Path */
+/* ALAG ALAG IMAGE TAGS FOR BASE & LID */
 #gift-lid, #gift-base {
-    position: absolute; width: 100%; height: 100%;
-    background-image: url('./public/IMG_20261101_230427.png');
-    background-size: contain; background-repeat: no-repeat; background-position: center bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 100%; 
+    object-fit: contain; transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-#gift-lid { clip-path: inset(0 0 50% 0); z-index: 6; cursor: pointer; }
-#gift-base { clip-path: inset(45% 0 0 0); z-index: 5; cursor: pointer; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6)); }
+#gift-lid { z-index: 6; cursor: pointer; }
+#gift-base { z-index: 5; cursor: pointer; filter: drop-shadow(0 15px 15px rgba(0,0,0,0.6)); }
 
 /* Glowing Light Inside Box */
 #gift-glow {
     position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);
     width: 0px; height: 0px; border-radius: 50%; z-index: 1; transition: box-shadow 0.5s ease-out;
 }
-.gift-open #gift-lid { transform: translateY(-70px) rotate(20deg); opacity: 0; pointer-events: none; }
+.gift-open #gift-lid { transform: translateY(-80px) rotate(15deg); opacity: 0; pointer-events: none; }
 .gift-open #gift-glow { box-shadow: 0 0 80px 40px rgba(255, 230, 100, 0.85), 0 0 120px 80px rgba(255, 20, 97, 0.6); }
 
 /* Teddy Peeking */
@@ -169,16 +165,12 @@
     opacity: 1; z-index: 10; transform: translateX(-50%) translateY(-35px);
 }
 
-/* Teddy Click Animations classes */
+/* Teddy Click Animations class (CENTER BIG) */
 .teddy-center-anim {
     position: fixed !important; top: 50% !important; left: 50% !important; bottom: auto !important;
     transform: translate(-50%, -50%) scale(3.5) !important;
     z-index: 100005 !important;
-}
-.teddy-corner-anim {
-    position: fixed !important; top: auto !important; bottom: 20px !important; left: 20px !important;
-    transform: translate(0, 0) scale(1.5) !important;
-    z-index: 100005 !important;
+    opacity: 1 !important;
 }
 
 /* Chocolate Volcano Particles */
@@ -229,12 +221,12 @@
     <img src="./public/IMG_20261101_230427.png" class="gift-preview-img" alt="Gift Bubble" />
 </button>
 
-<!-- NAYA BOTTOM GIFT SCENE (HIDDEN INITIALLY) -->
+<!-- NAYA BOTTOM GIFT SCENE -->
 <div id="bottom-gift-scene">
     <div id="gift-glow"></div>
     <img id="teddy-bear" src="./public/IMG_20261101_224159.png" alt="Teddy" />
-    <div id="gift-base"></div>
-    <div id="gift-lid"></div>
+    <img id="gift-base" src="./public/GIFT_BASE_IMAGE.png" alt="Gift Base" /> 
+    <img id="gift-lid" src="./public/IMG_20261101_230427.png" alt="Gift Lid" />
 </div>
 
 <section class="hero"><div class="copy"><span class="eyebrow">A LITTLE SURPRISE, JUST BECAUSE</span><h1>Hey, <span>beautiful.</span><small>Somewhere between stars, I found you.</small></h1><p class="lead">If I could wrap a feeling in a little universe, it would look like this. A quiet corner filled with warmth, tiny surprises, and reminders of how special you are.</p><div class="actions"><button class="pill" id="begin">STEP INTO OUR LITTLE WORLD&nbsp; ✧</button><a class="quiet-link" href="#little-things">A few little things <b>↓</b></a></div><div class="love-line">I LOVE YOU <img class="inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></div></div>
@@ -335,11 +327,11 @@ document.getElementById('open-note').addEventListener('click',openNote);document
 const floatingRose = document.getElementById('floating-rose');
 const miniBox = document.getElementById('mini-roses-box');
 
+// Function "I love you" text pop-up (5 seconds timer built-in)
 function showCenterLove() {
     const container = document.createElement('div');
     container.id = 'center-iloveyou';
     
-    // I love you letter by letter
     const phrase = "I love you".split("");
     phrase.forEach(char => {
         const span = document.createElement('span');
@@ -353,7 +345,7 @@ function showCenterLove() {
     });
 
     const heart = document.createElement('img');
-    heart.src = './public/IMG_20261101_160735.png'; // heart icon
+    heart.src = './public/IMG_20261101_160735.png';
     heart.className = 'ily-heart';
     container.appendChild(heart);
     document.body.appendChild(container);
@@ -365,7 +357,6 @@ function showCenterLove() {
         }, 180 * index); 
     });
 
-    // Pop up effect & heart beat
     const totalAnimTime = 180 * elements.length + 300;
     setTimeout(() => {
         container.classList.add('ily-pop');
@@ -374,7 +365,6 @@ function showCenterLove() {
         }, 500);
     }, totalAnimTime);
 
-    // NEW LOGIC: Fade out and remove after exactly 5 seconds
     setTimeout(() => {
         container.style.transition = 'opacity 0.8s ease';
         container.style.opacity = '0';
@@ -403,8 +393,8 @@ if(floatingRose && miniBox) {
         setTimeout(() => { this.style.display = 'none'; }, 420);
         
         const dropItems = [];
-        for(let i=0; i<30; i++) dropItems.push('./public/IMG_20261101_161017.png'); // roses
-        for(let i=0; i<20; i++) dropItems.push('./public/IMG_20261101_160735.png'); // hearts
+        for(let i=0; i<30; i++) dropItems.push('./public/IMG_20261101_161017.png'); 
+        for(let i=0; i<20; i++) dropItems.push('./public/IMG_20261101_160735.png'); 
         const letters = ['I','L','O','V','E','Y','O','U'];
         letters.forEach(l => { for(let i=0; i<2; i++) dropItems.push(l); }); 
 
@@ -426,7 +416,7 @@ if(floatingRose && miniBox) {
             p.className = 'petal-bottom';
             p.style.left = (Math.random() * 95) + 'vw';
             
-            const dur = (2 + Math.random() * 2.5) + 's';
+            const dur = (6 + Math.random() * 4) + 's';
             p.style.setProperty('--dur', dur);
             p.style.setProperty('--drift', (Math.random() * 400 - 200) + 'px');
             p.style.setProperty('--bottom-offset', (5 + Math.random() * 50) + 'px');
@@ -442,14 +432,13 @@ if(floatingRose && miniBox) {
 }
 
 /* =========================================
-   NAYA JS - GIFT BOX & CHOCOLATE VOLCANO
+   JS - GIFT BOX & CHOCOLATE VOLCANO
    ========================================= */
 
 const floatingGift = document.getElementById('floating-gift');
 const bottomGiftScene = document.getElementById('bottom-gift-scene');
 let giftOpened = false;
 
-// Bubble Pop Animation aur Box Bottom Par Aana
 floatingGift.addEventListener('click', function() {
     if(this.classList.contains('popped')) return;
     this.classList.add('popped');
@@ -462,7 +451,6 @@ floatingGift.addEventListener('click', function() {
     }, 420);
 });
 
-// Chocolate Eruption Function
 function spawnChocolate() {
     const chocImages = [
         './public/IMG_20261101_230342.png',
@@ -482,10 +470,9 @@ function spawnChocolate() {
     choc.src = chocImages[Math.floor(Math.random() * chocImages.length)];
     choc.className = 'chocolate-particle';
     
-    // Physics calculations
     const endX = (Math.random() * 80 - 40) + 'vw'; 
     const peakY = -(Math.random() * 50 + 30) + 'vh'; 
-    const endY = (80 + Math.random() * 30) + 'px'; // Settles at ground level
+    const endY = (80 + Math.random() * 30) + 'px'; 
     
     wrapper.style.setProperty('--endX', endX);
     choc.style.setProperty('--peakY', peakY);
@@ -497,15 +484,12 @@ function spawnChocolate() {
     document.body.appendChild(wrapper);
 }
 
-// Gift Box Kholne ka Logic
 bottomGiftScene.addEventListener('click', function() {
     if(giftOpened) return;
     giftOpened = true;
     
-    // Dhakan (Lid) hawa me udd jayega aur light jalegi
     this.classList.add('gift-open');
     
-    // 5 seconds tak volcano phutega (50 chocolates / 100ms)
     let chocCount = 0;
     const chocInterval = setInterval(() => {
         spawnChocolate();
@@ -513,7 +497,6 @@ bottomGiftScene.addEventListener('click', function() {
         if(chocCount >= 50) { 
             clearInterval(chocInterval);
             
-            // Jab chocolate band ho jaye, tab Teddy upar aayega
             setTimeout(() => {
                 bottomGiftScene.classList.add('teddy-peek');
             }, 800);
@@ -521,16 +504,15 @@ bottomGiftScene.addEventListener('click', function() {
     }, 100);
 });
 
-// Teddy Bear ko click karne ka logic
+// Teddy Bear Click Logic (TEDDY GAYAB AUR USKE BAAD I LOVE YOU TEXT)
 const teddy = document.getElementById('teddy-bear');
 let teddyClicked = false;
 
 teddy.addEventListener('click', function(e) {
     if(teddyClicked) return;
     teddyClicked = true;
-    e.stopPropagation(); // Box pe dubara click na ho isliye
+    e.stopPropagation();
     
-    // Teddy ko body ke direct child bana rahe hain, taaki parent scene usko pakad ke na rakhe
     const rect = teddy.getBoundingClientRect();
     document.body.appendChild(teddy);
     
@@ -539,16 +521,24 @@ teddy.addEventListener('click', function(e) {
     teddy.style.bottom = 'auto';
     teddy.style.transform = 'none';
     
-    // Force CSS reflow so exact transition trigger ho
     void teddy.offsetWidth;
     
     // Step 1: Teddy center me jaake bada hoga
     teddy.classList.add('teddy-center-anim');
     
-    // Step 2: 3 seconds ke baad bottom left corner me jaake fix ho jayega
+    // Step 2: 3 seconds ke baad fade ho kar gayab
     setTimeout(() => {
-        teddy.classList.remove('teddy-center-anim');
-        teddy.classList.add('teddy-corner-anim');
+        teddy.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        teddy.style.opacity = '0';
+        teddy.style.transform = 'translate(-50%, -50%) scale(4)'; 
+        
+        setTimeout(() => {
+            teddy.remove(); // Teddy remove
+            
+            // Step 3: Teddy ke gayab hone ke baad "I love you" wala text dikhana
+            showCenterLove();
+            
+        }, 800);
     }, 3000);
 });
 
