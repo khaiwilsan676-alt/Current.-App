@@ -266,7 +266,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <img src="./public/file_0000000051e082118a689661bf341818.png" id="gift-open" class="gift-img" alt="" style="display:none;" />
     </div>
 </div>
-<img src="./public/IMG_20261102_000552.png" class="teddy-bear" id="teddy-bear" alt="Cute Teddy">
+<!-- CHANGED: teddy image now IMG_20261101_224159.png -->
+<img src="./public/IMG_20261101_224159.png" class="teddy-bear" id="teddy-bear" alt="Cute Teddy">
 
 <section class="hero"><div class="copy"><span class="eyebrow">A LITTLE SURPRISE, JUST BECAUSE</span><h1>Hey, <span>beautiful.</span><small>Somewhere between stars, I found you.</small></h1><p class="lead">If I could wrap a feeling in a little universe, it would look like this. A quiet corner filled with warmth, tiny surprises, and reminders of how special you are.</p><div class="actions"><button class="pill" id="begin">STEP INTO OUR LITTLE WORLD&nbsp; ✧</button><a class="quiet-link" href="#little-things">A few little things <b>↓</b></a></div><div class="love-line">I LOVE YOU <img class="inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></div></div>
 <div class="visual"><div class="halo"></div><div class="ring"></div><div class="ring two"></div><div class="ring three"></div>
@@ -289,8 +290,8 @@ const cordWrap = document.getElementById('pull-cord-wrapper');
 const hLamp = document.getElementById('hanging-lamp');
 const modal = document.getElementById('modal');
 
-let pendingNote = false;          // note ke liye light on hona pending
-let pendingShowModal = false;     // light on hone par modal dikhana hai ya nahi
+let pendingNote = false;
+let pendingShowModal = false;
 
 function resetLights(forNote = false) {
     pendingNote = forNote;
@@ -302,7 +303,6 @@ function resetLights(forNote = false) {
     hLamp.classList.remove('drop', 'light-on');
 }
 
-// Notes content
 const notes = [
   ['Just for you.','If today feels heavy, I hope you remember: you make this world brighter just by being in it. You deserve every beautiful thing coming your way. 💗'],
   ['A tiny reminder.','You do not need to have it all figured out. Take your time, breathe softly, and remember how much goodness you carry inside. 🌷'],
@@ -321,7 +321,6 @@ function showNoteModal() {
 cordWrap.addEventListener('click', () => {
     if(cordWrap.classList.contains('cord-pull-anim')) return;
 
-    // Song starts right here on user gesture
     if(song.paused) {
         song.play().catch(e => console.log('Audio play error:', e));
     }
@@ -334,7 +333,6 @@ cordWrap.addEventListener('click', () => {
             setTimeout(() => {
                 blackOverlay.classList.add('hide'); 
 
-                // Agar note ke liye light on ho rahi thi → petals + modal
                 if(pendingNote) {
                     petals(); 
                     if(pendingShowModal) {
@@ -382,14 +380,12 @@ document.getElementById('begin').addEventListener('click', () => {
     document.getElementById('little-things').scrollIntoView({behavior:'smooth'});
 });
 
-// CHANGED: Open note → pehle black screen + lamp; light on hote hi note show
 function openNote(){
     pendingShowModal = true;
-    resetLights(true);   // black screen + cord reveal
+    resetLights(true);
 }
 document.getElementById('open-note').addEventListener('click', openNote);
 
-// SIDE IMAGE BUBBLE - SOAP BUBBLE EFFECT LOGIC
 const sideBubble = document.getElementById('side-image-open');
 sideBubble.addEventListener('click', () => {
     sideBubble.style.transform = 'scale(0.9)';
