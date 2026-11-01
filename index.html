@@ -295,7 +295,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 <section class="memory reveal"><div class="memory-box"><div class="envelope"><img src="./public/IMG_20261101_161004.png" alt="" /></div><span class="eyebrow">A NOTE, SEALED WITH LOVE</span><h2 id="note-title">A little note is waiting.</h2><p id="note-copy">No special occasion. No big reason. Just a tiny surprise for someone who makes ordinary days feel special.</p><button class="pill" id="open-note">OPEN YOUR LITTLE NOTE&nbsp; <img class="heart-icon inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></button><div class="signature" id="signature" hidden>with a little more love than words can say ♡</div></div></section>
 </main><footer class="footer"><span>✧</span><p>made of stardust, softness & a little love</p><img class="heart-icon footer-heart" src="./public/IMG_20261101_160735.png" alt="" /></footer></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><div class="note-art"><img class="note-main" src="./public/file_00000000dba082119b05f0d451a8dd2f.png" alt="" /></div><h3 id="modal-title">Just for you.</h3><p id="modal-copy">I hope you never forget how much light you bring into the world simply by being yourself. You deserve all the beautiful things. 💗</p><button class="close" id="close">KEEP THIS CLOSE</button></div></div>
+
+<!-- Yaha mene hidden audio tag wapas daal diya hai jo rassi kheenchne par bajega -->
+<audio id="love-song" preload="none" loop src="./public/Alfaaz-_Hamza_Malik___Zain_Ali__unki_tareef_mai_kahe_kya__Lyrics___Trending_Lyrics(128k).m4a"></audio>
+
 <script>
+const song = document.getElementById('love-song');
 const blackOverlay = document.getElementById('pitch-black');
 const cordWrap = document.getElementById('pull-cord-wrapper');
 const hLamp = document.getElementById('hanging-lamp');
@@ -320,6 +325,11 @@ cordWrap.addEventListener('click', () => {
             hLamp.classList.add('light-on');
             setTimeout(() => {
                 blackOverlay.classList.add('hide'); 
+
+                // Rassi kheenchne par (light on hote hi) background music play ho jayega
+                if(song.paused) {
+                    song.play().catch(e => console.log('Audio play error:', e));
+                }
 
                 if(pendingNote) {
                     petals(); 
@@ -493,7 +503,7 @@ if(floatingRose && miniBox) {
             p.className = 'petal-bottom';
             p.style.left = (Math.random() * 95) + 'vw';
             
-            // Ye dekh, speed ekdam slow kardi (5 se 10 second aaram se girenge)
+            // Speed slow rakh di hai (5-10 second me niche girenge)
             const dur = (5 + Math.random() * 5) + 's';
             p.style.setProperty('--dur', dur);
             p.style.setProperty('--drift', (Math.random() * 500 - 250) + 'px');
