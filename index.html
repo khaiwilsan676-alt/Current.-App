@@ -73,7 +73,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .side-image-bubble { display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; width: 280px; height: 280px; padding: 12px; border: 1px solid rgba(244, 208, 104, 0.3); border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15) 0%, rgba(131, 58, 180, 0.2) 50%, rgba(255, 20, 97, 0.1) 100%); box-shadow: inset -15px -15px 35px rgba(0, 0, 0, 0.5), inset 10px 10px 30px rgba(255,255,255,0.3), 0 30px 70px rgba(131, 58, 180, 0.4); backdrop-filter: blur(12px); cursor: pointer; transition: transform .4s cubic-bezier(.175,.885,.32,1.275), box-shadow .4s; }
 .side-image-bubble:before { content: ""; position: absolute; inset: 5px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); pointer-events: none; }
 .side-image-bubble:after { content: ""; position: absolute; width: 70px; height: 25px; top: 30px; left: 50px; border-radius: 50%; background: rgba(255,255,255,0.6); filter: blur(8px); transform: rotate(-35deg); pointer-events: none; }
-.side-image-bubble.popped { animation: bubble-pop .45s cubic-bezier(.2,.8,.3,1) forwards; pointer-events: none; }
 .side-image-bubble:hover { transform: scale(1.08); box-shadow: inset -15px -15px 35px rgba(0, 0, 0, 0.6), inset 10px 10px 30px rgba(255,255,255,0.5), 0 35px 90px rgba(255, 20, 97, 0.6); border-color: var(--gold); }
 .side-image-bubble img { width: 100%; height: 100%; object-fit: contain; transform: scale(0.88); filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)); }
 
@@ -149,7 +148,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 @keyframes fall { 0% { transform: translate3d(0, -50px, 0) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translate3d(var(--drift), 110vh, 0) rotate(540deg); opacity: 0; } }
 @keyframes pop { from { opacity: 0; transform: translateY(30px) scale(.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes bubble-pop { 0% { transform: scale(1); opacity: 1; filter: blur(0); } 35% { transform: scale(1.2); opacity: .9; } 70% { transform: scale(1.5); opacity: .4; filter: blur(5px); } 100% { transform: scale(2.2); opacity: 0; filter: blur(12px); } }
 
 /* CENTER HEART BUILD */
 .heart-build { width: 250px; height: 220px; position: relative; margin: 0 auto 35px; isolation: isolate; }
@@ -162,15 +160,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .love-line { margin-top: 35px; color: var(--gold); font: italic 24px "Playfair Display", serif; letter-spacing: .2em; text-shadow: 0 0 25px rgba(244, 208, 104, 0.6); }
 .love-line img { width: 34px; height: 34px; object-fit: contain; vertical-align: middle; margin-left: 8px; }
-
-/* MUSIC PLAYER GLOSSY */
-.music-player { position: fixed; z-index: 999; right: 30px; bottom: 30px; display: flex; align-items: center; gap: 16px; padding: 14px 22px; border: 1px solid rgba(255,255,255,0.1); border-top: 1px solid rgba(0, 242, 254, 0.3); border-radius: 24px; background: linear-gradient(145deg, rgba(15, 10, 25, 0.85), rgba(5, 2, 10, 0.95)); backdrop-filter: blur(25px); box-shadow: 0 20px 60px rgba(0,0,0,0.8), inset 0 2px 10px rgba(255,255,255,0.05); transition: 0.4s; }
-.music-player:hover { border-color: rgba(0, 242, 254, 0.5); box-shadow: 0 25px 70px rgba(0, 242, 254, 0.2), inset 0 2px 15px rgba(255,255,255,0.1); transform: translateY(-3px); }
-.music-heart { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(131, 58, 180, 0.3)); color: var(--cyan); font-size: 22px; animation: heartbeat 2s infinite; box-shadow: inset 0 2px rgba(255,255,255,0.2); }
-.music-label b { display: block; font: 16px "Playfair Display", serif; color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-.music-label small { display: block; margin-top: 5px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
-.music-player button { width: 42px; height: 42px; border: 1px solid rgba(0, 242, 254, 0.5); border-radius: 50%; background: linear-gradient(135deg, var(--cyan), var(--purple)); color: white; cursor: pointer; transition: .4s; box-shadow: 0 10px 25px rgba(0, 242, 254, 0.4), inset 0 2px 5px rgba(255,255,255,0.5); display: grid; place-items: center; }
-.music-player button:hover { transform: scale(1.15) rotate(5deg); box-shadow: 0 15px 35px rgba(0, 242, 254, 0.6), inset 0 2px 8px rgba(255,255,255,0.6); }
 
 /* RESPONSIVE */
 @media(max-width: 780px) {
@@ -188,10 +177,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
     .ring.three { width: 280px; height: 280px; }
     .cards { grid-template-columns: 1fr; gap: 20px; }
     .memory-box { padding: 50px 25px; border-radius: 30px; }
-    .music-player { right: 15px; bottom: 15px; padding: 12px 16px; border-radius: 20px; }
 }
 
-/* FLOATING BUBBLES & LAMP LOGIC (Same as before) */
+/* FLOATING BUBBLES & LAMP LOGIC */
 .floating-rose-bubble { position: fixed; top: -250px; left: 15%; z-index: 99; width: 160px; height: 160px; animation: floatDown 15s linear infinite; overflow: hidden; border-color: rgba(131, 58, 180, 0.5); }
 .inner-roses-container { position: absolute; inset: 0; border-radius: 50%; pointer-events: none; }
 .mini-rose { position: absolute; object-fit: contain; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.6)); animation: floatInside 4s ease-in-out infinite alternate; }
@@ -227,19 +215,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes superPop { 0% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-50%, -50%) scale(1.2); } 100% { transform: translate(-50%, -50%) scale(1); } }
 .ily-beat { animation: heartbeat 1s infinite; }
 
-/* GIFT BOX & VOLCANO */
+/* CSS GIFT BOX & VOLCANO */
 .floating-gift-bubble { position: fixed; top: -250px; left: 75%; z-index: 98; width: 140px; height: 140px; animation: floatDownGift 17s linear infinite; display: flex; align-items: center; justify-content: center; border-color: rgba(0, 242, 254, 0.4); }
 @keyframes floatDownGift { 0% { transform: translateY(0) rotate(0deg); } 100% { transform: translateY(120vh) rotate(-40deg); } }
 .gift-master-wrapper { position: fixed; bottom: 20px; left: 0; width: 100%; height: 130px; z-index: 100000; pointer-events: none; display: none; animation: dropInBox 1s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
 @keyframes dropInBox { 0% { bottom: 100vh; } 100% { bottom: 20px; } }
 .gift-hitbox { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 130px; height: 130px; cursor: pointer; pointer-events: auto; }
-.gift-body { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 85px; object-fit: cover; object-position: bottom; z-index: 100006; pointer-events: none; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.9)); }
-.gift-lid { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 125px; height: 55px; object-fit: cover; object-position: top; z-index: 100007; pointer-events: none; transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .gift-glow-fx { position: absolute; top: 0; left: 50%; transform: translate(-50%, -30%); width: 25px; height: 25px; border-radius: 50%; opacity: 0; z-index: 100001; pointer-events: none; box-shadow: 0 0 120px 70px #fff, 0 0 250px 120px var(--gold); transition: opacity 1.2s; }
+
+/* PURE CSS GIFT BOX */
+.gift-css-body { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 85px; background: linear-gradient(135deg, var(--rose), var(--purple)); border-radius: 5px; box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.5); z-index: 100006; pointer-events: none; }
+.gift-css-body::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 22px; height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-dark)); }
+.gift-css-body::after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 22px; background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+
+.gift-css-lid { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); width: 125px; height: 25px; background: linear-gradient(135deg, var(--pink), var(--purple)); border-radius: 5px; box-shadow: 0 5px 10px rgba(0,0,0,0.4); z-index: 100007; pointer-events: none; transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.gift-css-lid::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 22px; height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-dark)); box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+.gift-css-bow { position: absolute; bottom: 23px; left: 50%; transform: translateX(-50%); width: 50px; height: 20px; display: flex; justify-content: space-between; }
+.gift-css-bow::before, .gift-css-bow::after { content: ''; width: 22px; height: 22px; background: linear-gradient(135deg, rgba(244, 208, 104, 0.3), transparent); border: 3px solid var(--gold); border-radius: 50% 50% 0 50%; transform: rotate(45deg); box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 3px 6px rgba(0,0,0,0.3); }
+.gift-css-bow::after { border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
+
 .teddy-bear { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%) translateY(40px) scale(0.2); width: 95px; z-index: 100005; opacity: 0; transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; display: none; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8)); }
 .teddy-bear.peek { opacity: 1; transform: translateX(-50%) translateY(-75px) scale(1); pointer-events: auto; cursor: pointer; }
 .teddy-bear.center-screen { bottom: 50%; left: 50%; transform: translate(-50%, 50%) scale(3.8); z-index: 100020; pointer-events: none; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9)); }
 .teddy-bear.bottom-left { bottom: 25px; left: 25px; transform: translate(0, 0) scale(1.4); z-index: 100020; pointer-events: auto; }
+
+/* SOAP BUBBLE EFFECT */
+.soap-bubble { position: absolute; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1) 60%, transparent 100%); border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3), 0 0 5px rgba(244, 208, 104, 0.2); pointer-events: none; z-index: 1000; animation: floatSoapBubble forwards; }
+@keyframes floatSoapBubble { 0% { transform: scale(0.5) translate(0, 0); opacity: 1; } 100% { transform: scale(1.2) translate(var(--tx), var(--ty)); opacity: 0; } }
 </style>
 </head>
 <body>
@@ -264,14 +267,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </button>
 
 <button class="side-image-bubble floating-gift-bubble" id="floating-gift" aria-label="Pop the gift bubble">
-    <img src="./public/IMG_20261101_230427.png" alt="" style="width: 80%; height: 80%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7)); pointer-events: none;" />
+    <div style="position: relative; width: 125px; height: 125px; transform: scale(0.65) translateY(20px); pointer-events: none;">
+        <div class="gift-css-body"></div>
+        <div class="gift-css-lid"><div class="gift-css-bow"></div></div>
+    </div>
 </button>
 
 <div id="gift-master-wrapper" class="gift-master-wrapper">
     <div class="gift-hitbox" id="gift-hitbox">
         <div class="gift-glow-fx" id="gift-glow-fx"></div>
-        <img src="./public/IMG_20261101_230427.png" class="gift-body" alt="">
-        <img src="./public/IMG_20261101_230427.png" class="gift-lid" id="gift-lid" alt="">
+        <div class="gift-css-body"></div>
+        <div class="gift-css-lid" id="gift-lid">
+            <div class="gift-css-bow"></div>
+        </div>
     </div>
 </div>
 <img src="./public/IMG_20261101_224159.png" class="teddy-bear" id="teddy-bear" alt="Cute Teddy">
@@ -286,11 +294,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </div></section>
 <section class="memory reveal"><div class="memory-box"><div class="envelope"><img src="./public/IMG_20261101_161004.png" alt="" /></div><span class="eyebrow">A NOTE, SEALED WITH LOVE</span><h2 id="note-title">A little note is waiting.</h2><p id="note-copy">No special occasion. No big reason. Just a tiny surprise for someone who makes ordinary days feel special.</p><button class="pill" id="open-note">OPEN YOUR LITTLE NOTE&nbsp; <img class="heart-icon inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></button><div class="signature" id="signature" hidden>with a little more love than words can say ♡</div></div></section>
 </main><footer class="footer"><span>✧</span><p>made of stardust, softness & a little love</p><img class="heart-icon footer-heart" src="./public/IMG_20261101_160735.png" alt="" /></footer></div>
-<div class="music-player"><span class="music-heart">♫</span><div class="music-label"><b>Our little song</b><small> a melody just for you</small></div><button id="music-toggle" aria-label="Play music">▶</button><audio id="love-song" preload="none" loop src="./public/Alfaaz-_Hamza_Malik___Zain_Ali__unki_tareef_mai_kahe_kya__Lyrics___Trending_Lyrics(128k).m4a"></audio></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><div class="note-art"><img class="note-main" src="./public/file_00000000dba082119b05f0d451a8dd2f.png" alt="" /></div><h3 id="modal-title">Just for you.</h3><p id="modal-copy">I hope you never forget how much light you bring into the world simply by being yourself. You deserve all the beautiful things. 💗</p><button class="close" id="close">KEEP THIS CLOSE</button></div></div>
 <script>
-const song=document.getElementById('love-song'),musicBtn=document.getElementById('music-toggle');musicBtn.addEventListener('click',async()=>{if(song.paused){try{await song.play();musicBtn.textContent='Ⅱ'}catch(e){musicBtn.textContent='▶'}}else{song.pause();musicBtn.textContent='▶'}});song.addEventListener('ended',()=>musicBtn.textContent='▶');
-
 const blackOverlay = document.getElementById('pitch-black');
 const cordWrap = document.getElementById('pull-cord-wrapper');
 const hLamp = document.getElementById('hanging-lamp');
@@ -315,12 +320,6 @@ cordWrap.addEventListener('click', () => {
             hLamp.classList.add('light-on');
             setTimeout(() => {
                 blackOverlay.classList.add('hide'); 
-                
-                if(song.paused) {
-                    song.play().then(() => {
-                        musicBtn.textContent = 'Ⅱ';
-                    }).catch(e => console.log('Audio play error:', e));
-                }
 
                 if(pendingNote) {
                     petals(); 
@@ -368,7 +367,40 @@ function openNote(){
     note=(note+1)%notes.length;
     resetLights(true); 
 }
-document.getElementById('open-note').addEventListener('click',openNote);document.getElementById('side-image-open').addEventListener('click',()=>{const bubble=document.getElementById('side-image-open');if(bubble.classList.contains('popped'))return;bubble.classList.add('popped');bubble.disabled=true;});function close(){modal.classList.remove('show');document.getElementById('signature').hidden=false;petals();}document.getElementById('close').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});const heartBuild=document.getElementById('heart-build'),roseParticles=document.getElementById('rose-particles');function makeRoseHeart(){const count=250,w=230,h=205;for(let i=0;i<count;i++){let x,y;do{x=Math.random()*2.5-1.25;y=Math.random()*2.5-1.1}while(Math.pow(x*x+y*y-1,3)-x*x*y*y*y>0);const img=document.createElement('img');img.className='rose-particle';img.src='./public/IMG_20261101_161017.png';img.alt='';img.draggable=false;img.style.setProperty('--x',((x+1.25)/2.5*100)+'%');img.style.setProperty('--y',((1.4-y)/2.5*100)+'%');img.style.setProperty('--sx',(Math.random()*440-220)+'px');img.style.setProperty('--sy',(Math.random()*300-150)+'px');img.style.setProperty('--delay',(Math.random()*1.35)+'s');roseParticles.appendChild(img)}}makeRoseHeart();const heartObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){heartBuild.classList.add('play');heartObserver.disconnect()}}),{threshold:.35});heartObserver.observe(heartBuild);const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('open-note').addEventListener('click',openNote);
+
+// SIDE IMAGE BUBBLE - SOAP BUBBLE EFFECT LOGIC
+const sideBubble = document.getElementById('side-image-open');
+sideBubble.addEventListener('click', () => {
+    sideBubble.style.transform = 'scale(0.9)';
+    setTimeout(() => { sideBubble.style.transform = ''; }, 150);
+
+    const rect = sideBubble.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    for(let i=0; i<6; i++) {
+        let soap = document.createElement('div');
+        soap.className = 'soap-bubble';
+        let size = 15 + Math.random() * 25; 
+        soap.style.width = size + 'px';
+        soap.style.height = size + 'px';
+        soap.style.left = (centerX - size/2) + 'px';
+        soap.style.top = (centerY - size/2) + 'px';
+        
+        let tx = (Math.random() - 0.5) * 250 + 'px';
+        let ty = (Math.random() - 1) * 300 - 50 + 'px'; 
+        
+        soap.style.setProperty('--tx', tx);
+        soap.style.setProperty('--ty', ty);
+        soap.style.animationDuration = (2 + Math.random() * 1.5) + 's';
+        
+        document.body.appendChild(soap);
+        setTimeout(() => soap.remove(), 3500);
+    }
+});
+
+function close(){modal.classList.remove('show');document.getElementById('signature').hidden=false;petals();}document.getElementById('close').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});const heartBuild=document.getElementById('heart-build'),roseParticles=document.getElementById('rose-particles');function makeRoseHeart(){const count=250,w=230,h=205;for(let i=0;i<count;i++){let x,y;do{x=Math.random()*2.5-1.25;y=Math.random()*2.5-1.1}while(Math.pow(x*x+y*y-1,3)-x*x*y*y*y>0);const img=document.createElement('img');img.className='rose-particle';img.src='./public/IMG_20261101_161017.png';img.alt='';img.draggable=false;img.style.setProperty('--x',((x+1.25)/2.5*100)+'%');img.style.setProperty('--y',((1.4-y)/2.5*100)+'%');img.style.setProperty('--sx',(Math.random()*440-220)+'px');img.style.setProperty('--sy',(Math.random()*300-150)+'px');img.style.setProperty('--delay',(Math.random()*1.35)+'s');roseParticles.appendChild(img)}}makeRoseHeart();const heartObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){heartBuild.classList.add('play');heartObserver.disconnect()}}),{threshold:.35});heartObserver.observe(heartBuild);const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
 const floatingRose = document.getElementById('floating-rose');
 const miniBox = document.getElementById('mini-roses-box');
@@ -461,7 +493,8 @@ if(floatingRose && miniBox) {
             p.className = 'petal-bottom';
             p.style.left = (Math.random() * 95) + 'vw';
             
-            const dur = (2 + Math.random() * 3) + 's';
+            // Ye dekh, speed ekdam slow kardi (5 se 10 second aaram se girenge)
+            const dur = (5 + Math.random() * 5) + 's';
             p.style.setProperty('--dur', dur);
             p.style.setProperty('--drift', (Math.random() * 500 - 250) + 'px');
             p.style.setProperty('--bottom-offset', (10 + Math.random() * 60) + 'px');
@@ -589,6 +622,6 @@ teddy.addEventListener('click', function(e) {
     setTimeout(() => {
         teddy.classList.remove('center-screen');
         teddy.classList.add('bottom-left');
-    }, 2200); 
+    }, 5000); 
 });
 </script></body></html>
