@@ -223,7 +223,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .gift-hitbox { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 130px; height: 130px; cursor: pointer; pointer-events: auto; }
 .gift-glow-fx { position: absolute; top: 0; left: 50%; transform: translate(-50%, -30%); width: 25px; height: 25px; border-radius: 50%; opacity: 0; z-index: 100001; pointer-events: none; box-shadow: 0 0 120px 70px #fff, 0 0 250px 120px var(--gold); transition: opacity 1.2s; }
 
-/* PURE CSS GIFT BOX */
+/* PURE CSS GIFT BOX (kept for reference, unused now) */
 .gift-css-body { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 85px; background: linear-gradient(135deg, var(--rose), var(--purple)); border-radius: 5px; box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.5); z-index: 100006; pointer-events: none; }
 .gift-css-body::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 22px; height: 100%; background: linear-gradient(to right, var(--gold), var(--gold-dark)); }
 .gift-css-body::after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); width: 100%; height: 22px; background: linear-gradient(to bottom, var(--gold), var(--gold-dark)); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
@@ -237,7 +237,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .teddy-bear { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%) translateY(40px) scale(0.2); width: 95px; z-index: 100005; opacity: 0; transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); pointer-events: none; display: none; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8)); }
 .teddy-bear.peek { opacity: 1; transform: translateX(-50%) translateY(-75px) scale(1); pointer-events: auto; cursor: pointer; }
-.teddy-bear.center-screen { bottom: 50%; left: 50%; transform: translate(-50%, 50%) scale(3.8); z-index: 100020; pointer-events: none; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9)); }
+/* CHANGED: teddy stays big & centered permanently */
+.teddy-bear.center-screen { bottom: 50%; left: 50%; transform: translate(-50%, 50%) scale(3.8); z-index: 100020; pointer-events: auto; cursor: default; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.9)); }
 .teddy-bear.bottom-left { bottom: 25px; left: 25px; transform: translate(0, 0) scale(1.4); z-index: 100020; pointer-events: auto; }
 
 /* SOAP BUBBLE EFFECT */
@@ -267,22 +268,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </button>
 
 <button class="side-image-bubble floating-gift-bubble" id="floating-gift" aria-label="Pop the gift bubble">
-    <div style="position: relative; width: 125px; height: 125px; transform: scale(0.65) translateY(20px); pointer-events: none;">
-        <div class="gift-css-body"></div>
-        <div class="gift-css-lid"><div class="gift-css-bow"></div></div>
-    </div>
+    <img src="./public/IMG_20261102_000552.png" alt="" style="width: 100%; height: 100%; object-fit: contain; transform: scale(0.92); pointer-events: none; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));" />
 </button>
 
 <div id="gift-master-wrapper" class="gift-master-wrapper">
     <div class="gift-hitbox" id="gift-hitbox">
         <div class="gift-glow-fx" id="gift-glow-fx"></div>
-        <div class="gift-css-body"></div>
-        <div class="gift-css-lid" id="gift-lid">
-            <div class="gift-css-bow"></div>
-        </div>
+        <img src="./public/file_0000000051e082118a689661bf341818.png" id="gift-lid" alt=""
+             style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+                    width: 130px; height: 130px; object-fit: contain; pointer-events: none;
+                    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8));
+                    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);" />
     </div>
 </div>
-<img src="./public/IMG_20261101_224159.png" class="teddy-bear" id="teddy-bear" alt="Cute Teddy">
+<img src="./public/IMG_20261102_000552.png" class="teddy-bear" id="teddy-bear" alt="Cute Teddy">
 
 <section class="hero"><div class="copy"><span class="eyebrow">A LITTLE SURPRISE, JUST BECAUSE</span><h1>Hey, <span>beautiful.</span><small>Somewhere between stars, I found you.</small></h1><p class="lead">If I could wrap a feeling in a little universe, it would look like this. A quiet corner filled with warmth, tiny surprises, and reminders of how special you are.</p><div class="actions"><button class="pill" id="begin">STEP INTO OUR LITTLE WORLD&nbsp; ✧</button><a class="quiet-link" href="#little-things">A few little things <b>↓</b></a></div><div class="love-line">I LOVE YOU <img class="inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></div></div>
 <div class="visual"><div class="halo"></div><div class="ring"></div><div class="ring two"></div><div class="ring three"></div>
@@ -296,7 +295,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </main><footer class="footer"><span>✧</span><p>made of stardust, softness & a little love</p><img class="heart-icon footer-heart" src="./public/IMG_20261101_160735.png" alt="" /></footer></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><div class="note-art"><img class="note-main" src="./public/file_00000000dba082119b05f0d451a8dd2f.png" alt="" /></div><h3 id="modal-title">Just for you.</h3><p id="modal-copy">I hope you never forget how much light you bring into the world simply by being yourself. You deserve all the beautiful things. 💗</p><button class="close" id="close">KEEP THIS CLOSE</button></div></div>
 
-<!-- Yaha mene hidden audio tag wapas daal diya hai jo rassi kheenchne par bajega -->
 <audio id="love-song" preload="none" loop src="./public/Alfaaz-_Hamza_Malik___Zain_Ali__unki_tareef_mai_kahe_kya__Lyrics___Trending_Lyrics(128k).m4a"></audio>
 
 <script>
@@ -318,6 +316,12 @@ function resetLights(forNote = false) {
 
 cordWrap.addEventListener('click', () => {
     if(cordWrap.classList.contains('cord-pull-anim')) return;
+
+    // Song starts right here on user gesture (reliable autoplay)
+    if(song.paused) {
+        song.play().catch(e => console.log('Audio play error:', e));
+    }
+
     cordWrap.classList.add('cord-pull-anim');
     setTimeout(() => {
         hLamp.classList.add('drop');
@@ -325,11 +329,6 @@ cordWrap.addEventListener('click', () => {
             hLamp.classList.add('light-on');
             setTimeout(() => {
                 blackOverlay.classList.add('hide'); 
-
-                // Rassi kheenchne par (light on hote hi) background music play ho jayega
-                if(song.paused) {
-                    song.play().catch(e => console.log('Audio play error:', e));
-                }
 
                 if(pendingNote) {
                     petals(); 
@@ -503,7 +502,6 @@ if(floatingRose && miniBox) {
             p.className = 'petal-bottom';
             p.style.left = (Math.random() * 95) + 'vw';
             
-            // Speed slow rakh di hai (5-10 second me niche girenge)
             const dur = (5 + Math.random() * 5) + 's';
             p.style.setProperty('--dur', dur);
             p.style.setProperty('--drift', (Math.random() * 500 - 250) + 'px');
@@ -622,16 +620,13 @@ giftHitbox.addEventListener('click', function() {
     startChocolateVolcano();
 });
 
+// CHANGED: Teddy click → big & centered, STAYS there permanently
 teddy.addEventListener('click', function(e) {
     e.stopPropagation(); 
     if(!isGiftOpened) return;
     
-    teddy.classList.remove('peek');
+    teddy.classList.remove('peek', 'bottom-left');
     teddy.classList.add('center-screen');
-    
-    setTimeout(() => {
-        teddy.classList.remove('center-screen');
-        teddy.classList.add('bottom-left');
-    }, 5000); 
+    // No more 5-second timeout → teddy stays in center forever
 });
 </script></body></html>
