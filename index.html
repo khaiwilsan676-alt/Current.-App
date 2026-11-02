@@ -269,6 +269,54 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media(max-width:600px){.nav{padding:0 17px}.nav-note{display:none}.mood-toggle{padding:10px 12px;font-size:8px}}
 </style>
 
+
+<style id="readable-romance-and-features">
+/* Clear, readable type in both romantic themes */
+.site{color:#fff8f7}
+.site .lead,.site .head p,.site .card p,.site .memory-box p{color:#ead8df}
+.site .eyebrow,.site .card small,.site .signature,.site .nav-note{color:#f4c7d4}
+.site .hero h1 span,.site .head h2 em{background:linear-gradient(110deg,#ffe1e8,#f3a9c0 55%,#e8c8ec);-webkit-background-clip:text;background-clip:text;color:transparent}
+.site .hero h1 small{color:#f3e5e9}
+.site .quiet-link{color:#ffd9e3}
+.site .o1,.site .o2{color:#ffe1e8}
+.site .scroll{color:#ead8df}
+.site .card h3,.site .memory-box h2{color:#fff8f7}
+.site .pill,.site .close,.site .mood-toggle{ text-shadow:0 1px 2px rgba(35,8,22,.35)}
+.site.soft-mood{color:#382532}
+.site.soft-mood .brand,.site.soft-mood .hero h1,.site.soft-mood .card h3,.site.soft-mood .memory-box h2{color:#382532}
+.site.soft-mood .hero h1 span,.site.soft-mood .head h2 em{background:none;-webkit-text-fill-color:#9a4668;color:#9a4668;filter:none;text-shadow:none}
+.site.soft-mood .hero h1 small,.site.soft-mood .lead,.site.soft-mood .head p,.site.soft-mood .card p,.site.soft-mood .memory-box p{color:#624957}
+.site.soft-mood .eyebrow,.site.soft-mood .card small,.site.soft-mood .signature,.site.soft-mood .nav-note{color:#8a3f5f;text-shadow:none}
+.site.soft-mood .quiet-link,.site.soft-mood .o1,.site.soft-mood .o2{color:#813b59}
+.site.soft-mood .scroll{color:#624957}
+.site.soft-mood .card h3,.site.soft-mood .memory-box h2{color:#382532}
+.site.soft-mood .love-line{color:#8a3f5f;text-shadow:none}
+.site.soft-mood .pill{color:#fff}
+.site.soft-mood .mood-toggle{color:#71334f}
+.site.soft-mood .orbit{color:#71334f}
+.site.soft-mood .footer{color:#624957}
+.site :focus-visible{outline:3px solid #f2c3d2;outline-offset:4px}
+.love-extras{max-width:1120px;margin:0 auto;padding:20px 30px 120px;position:relative;z-index:5}
+.extras-panel{border:1px solid rgba(242,190,207,.24);border-radius:34px;padding:clamp(26px,5vw,52px);background:linear-gradient(145deg,rgba(255,226,235,.09),rgba(65,28,48,.22));box-shadow:0 28px 75px rgba(0,0,0,.28);backdrop-filter:blur(24px)}
+.extras-heading{text-align:center;margin-bottom:34px}
+.extras-heading h2{font:500 clamp(34px,5vw,52px)/1.1 "Playfair Display",serif;margin:14px 0;color:#fff5f7}
+.extras-heading p{color:#ead8df;line-height:1.8;margin:0 auto;max-width:540px}
+.extras-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.extra-card{min-width:0;border:1px solid rgba(244,199,212,.2);border-radius:24px;padding:25px 22px;background:rgba(20,8,17,.34)}
+.extra-card .extra-icon{font-size:27px;display:block;margin-bottom:15px}
+.extra-card h3{font:600 23px "Playfair Display",serif;color:#fff4f6;margin:0 0 10px}
+.extra-card p{color:#ead8df;font-size:14px;line-height:1.8;min-height:52px;margin:0 0 18px}
+.extra-result{min-height:66px;padding:14px;border-radius:16px;background:rgba(255,222,232,.09);border:1px solid rgba(244,199,212,.15);color:#ffe3eb;font:italic 16px/1.65 "Playfair Display",serif;margin-bottom:16px}
+.extra-button{width:100%;border:1px solid rgba(242,215,189,.5);border-radius:99px;padding:13px 15px;background:linear-gradient(135deg,#b85d7d,#75415f);color:#fff;font:700 10px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.extra-button:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(184,93,125,.3)}
+.site.soft-mood .extras-panel{background:rgba(255,255,255,.66);border-color:rgba(154,70,104,.2);box-shadow:0 20px 55px rgba(130,77,98,.1)}
+.site.soft-mood .extras-heading h2,.site.soft-mood .extra-card h3{color:#382532}
+.site.soft-mood .extras-heading p,.site.soft-mood .extra-card p{color:#624957}
+.site.soft-mood .extra-card{background:rgba(255,255,255,.58);border-color:rgba(154,70,104,.18)}
+.site.soft-mood .extra-result{background:#fff8fa;color:#71334f;border-color:#e5c5d0}
+@media(max-width:780px){.extras-grid{grid-template-columns:1fr}.extra-card p{min-height:0}.love-extras{padding:10px 20px 85px}.extras-panel{border-radius:26px}}
+@media(prefers-reduced-motion:reduce){.site *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
 
@@ -313,6 +361,40 @@ button, a { -webkit-tap-highlight-color: transparent; }
 <article class="card reveal"><div class="card-icon"><img src="./public/IMG_20261101_220430.png" alt="" /></div><small>02 — A LITTLE WISH</small><h3>Choose your joy.</h3><p>May life surprise you gently, bring you reasons to laugh, and give you a thousand lovely tomorrows.</p><span class="number">02</span></article>
 <article class="card reveal"><div class="card-icon"><img src="./public/IMG_20261101_220105.png" alt="" /></div><small>03 — ALWAYS</small><h3>You deserve love.</h3><p>The kind that feels safe, honest, patient and warm. The kind that never asks you to dim your light.</p><span class="number">03</span></article>
 </div></section>
+
+<section class="love-extras reveal" id="little-surprises">
+  <div class="extras-panel">
+    <div class="extras-heading">
+      <span class="eyebrow">A LITTLE MORE MAGIC</span>
+      <h2>Three tiny surprises.</h2>
+      <p>Whenever you need a smile, open one. A little love, a spontaneous plan, or a wish just for you.</p>
+    </div>
+    <div class="extras-grid">
+      <article class="extra-card">
+        <span class="extra-icon" aria-hidden="true">💌</span>
+        <h3>Love note of the moment</h3>
+        <p>A fresh little reminder, whenever your heart needs one.</p>
+        <div class="extra-result" id="daily-love-note" aria-live="polite">You make ordinary moments feel quietly extraordinary.</div>
+        <button class="extra-button" id="new-love-note" type="button">Another little note</button>
+      </article>
+      <article class="extra-card">
+        <span class="extra-icon" aria-hidden="true">🥂</span>
+        <h3>Our date-night idea</h3>
+        <p>Let a little spontaneity choose your next lovely evening.</p>
+        <div class="extra-result" id="date-idea" aria-live="polite">A candlelit dinner, followed by a slow walk under the stars.</div>
+        <button class="extra-button" id="pick-date" type="button">Surprise our evening</button>
+      </article>
+      <article class="extra-card">
+        <span class="extra-icon" aria-hidden="true">✨</span>
+        <h3>Wish jar</h3>
+        <p>Tap to open a tiny wish made of hope, warmth, and possibility.</p>
+        <div class="extra-result" id="little-wish" aria-live="polite">There is so much beautiful life still waiting for you.</div>
+        <button class="extra-button" id="open-wish" type="button">Pick a little wish</button>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="memory reveal"><div class="memory-box"><div class="envelope"><img src="./public/IMG_20261101_161004.png" alt="" /></div><span class="eyebrow">A NOTE, SEALED WITH LOVE</span><h2 id="note-title">A little note is waiting.</h2><p id="note-copy">No special occasion. No big reason. Just a tiny surprise for someone who makes ordinary days feel special.</p><button class="pill" id="open-note">OPEN YOUR LITTLE NOTE&nbsp; <img class="heart-icon inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></button><div class="signature" id="signature" hidden>with a little more love than words can say ♡</div></div></section>
 </main><footer class="footer"><span>✧</span><p>made of stardust, softness & a little love</p><img class="heart-icon footer-heart" src="./public/IMG_20261101_160735.png" alt="" /></footer></div>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><div class="note-art"><img class="note-main" src="./public/file_00000000dba082119b05f0d451a8dd2f.png" alt="" /></div><h3 id="modal-title">Just for you.</h3><p id="modal-copy">I hope you never forget how much light you bring into the world simply by being yourself. You deserve all the beautiful things. 💗</p><button class="close" id="close">KEEP THIS CLOSE</button></div></div>
@@ -709,4 +791,35 @@ teddy.addEventListener('click', function(e) {
 const moodButton=document.getElementById("mood-toggle");
 const moodSite=document.querySelector(".site");
 if(moodButton&&moodSite){moodButton.addEventListener("click",()=>{const soft=moodSite.classList.toggle("soft-mood");moodButton.setAttribute("aria-pressed",String(soft));moodButton.textContent=soft?"✦  LUXE NIGHT":"☾  DREAMY MOOD";});}
-</script></body></html>
+</script>
+<script id="little-surprises-logic">
+(()=>{
+ const notes=[
+  "You are someone's favourite kind of sunshine.",
+  "I hope today gives you a hundred tiny reasons to smile.",
+  "You deserve a love that feels gentle, steady, and safe.",
+  "Even the smallest moments become special when shared with you.",
+  "Never forget: you are rare, worthy, and wonderfully loved."
+ ];
+ const dates=[
+  "A candlelit dinner, followed by a slow walk under the stars.",
+  "Make dessert together, play your favourite songs, and dance in the kitchen.",
+  "A sunset picnic with sweet treats and no rush to go home.",
+  "A cosy movie night, fairy lights, and a blanket for two.",
+  "Dress up for a surprise dinner somewhere you have never tried.",
+  "A late-night drive, soft music, and your favourite comfort food."
+ ];
+ const wishes=[
+  "May your heart always feel safe enough to be fully itself.",
+  "May the next chapter bring more laughter than worry.",
+  "May you find beauty in the little things every single day.",
+  "May every dream you hold close find its way toward you.",
+  "May you always be surrounded by kindness that feels like home."
+ ];
+ const bind=(id,items,target)=>{const button=document.getElementById(id),output=document.getElementById(target);if(!button||!output)return;button.addEventListener("click",()=>{let next;do{next=items[Math.floor(Math.random()*items.length)];}while(items.length>1&&next===output.textContent);output.textContent=next;});};
+ bind("new-love-note",notes,"daily-love-note");
+ bind("pick-date",dates,"date-idea");
+ bind("open-wish",wishes,"little-wish");
+})();
+</script>
+</body></html>
