@@ -359,48 +359,41 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media(prefers-reduced-motion:reduce){.site *{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 
-<style id="forever-couple-cinema">
-.couple-cinema{max-width:1120px;margin:0 auto;padding:30px 24px 100px;position:relative;isolation:isolate}
-.couple-stage{height:360px;max-width:900px;margin:auto;position:relative;overflow:hidden;border:1px solid rgba(242,215,189,.2);border-radius:34px;background:radial-gradient(ellipse at 50% 100%,rgba(206,101,143,.24),transparent 54%),linear-gradient(180deg,#100c20 0%,#241329 68%,#120d1a 100%);box-shadow:0 35px 90px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.12)}
-.couple-stage:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 28%,rgba(255,218,228,.13),transparent 38%);pointer-events:none;animation:moonPulse 5s ease-in-out infinite}
-.couple-stage:after{content:"";position:absolute;z-index:1;left:-12%;top:24%;width:90px;height:2px;background:linear-gradient(90deg,transparent,#fff4f8,transparent);box-shadow:0 0 12px #ffcee0;transform:rotate(-18deg);animation:shootingStar 6s linear 1s infinite;opacity:0}
-.couple-stars,.couple-stars:before,.couple-stars:after{position:absolute;inset:0;content:"";background-image:radial-gradient(2px 2px at 12% 22%,#fff 60%,transparent),radial-gradient(1px 1px at 28% 16%,#ffdce8 60%,transparent),radial-gradient(2px 2px at 76% 18%,#fff 60%,transparent),radial-gradient(1px 1px at 88% 40%,#ffdce8 60%,transparent),radial-gradient(1px 1px at 61% 11%,#fff 60%,transparent),radial-gradient(2px 2px at 42% 34%,#fff 60%,transparent);background-size:100% 100%;animation:coupleTwinkle 4s ease-in-out infinite alternate}
-.couple-stars:before{transform:translate(15px,10px);opacity:.55;animation-delay:-2s}
-.couple-moon{position:absolute;top:34px;left:50%;width:66px;height:66px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff9f0,#f1c9d8 70%);box-shadow:0 0 45px rgba(255,213,230,.48),0 0 100px rgba(228,141,180,.18)}
-.couple-ground{position:absolute;bottom:-65px;left:-10%;width:120%;height:140px;border-radius:50% 50% 0 0;background:linear-gradient(180deg,#392139,#110d19);box-shadow:0 -12px 50px rgba(236,129,174,.12)}
-.couple-person{position:absolute;bottom:63px;width:100px;height:190px;z-index:2;filter:drop-shadow(0 0 18px rgba(236,139,179,.2))}
-.couple-person.left{left:calc(50% - 250px);animation:coupleRomanceLeft 11s cubic-bezier(.45,0,.25,1) .2s infinite}
-.couple-person.right{right:calc(50% - 250px);animation:coupleRomanceRight 11s cubic-bezier(.45,0,.25,1) .2s infinite}
-.couple-head{position:absolute;top:5px;left:35px;width:35px;height:39px;border-radius:48% 48% 45% 45%;background:linear-gradient(145deg,#3a2438,#100d1a);box-shadow:inset 5px 2px 0 rgba(255,205,224,.12)}
-.couple-body{position:absolute;top:43px;left:22px;width:61px;height:100px;border-radius:30px 30px 12px 12px;background:linear-gradient(110deg,#523149,#17101f 72%);clip-path:polygon(25% 0,75% 0,100% 100%,0 100%)}
-.couple-person.right .couple-body{background:linear-gradient(110deg,#32243b,#100d19 75%);clip-path:polygon(20% 0,80% 0,88% 100%,12% 100%)}
-.couple-arm{position:absolute;top:54px;left:68px;width:16px;height:94px;border-radius:20px;background:linear-gradient(#382034,#17101f);transform:rotate(-24deg);transform-origin:top;animation:coupleEmbraceLeft 11s ease-in-out infinite}
-.couple-person.right .couple-arm{left:15px;transform:rotate(24deg);animation-name:coupleEmbraceRight}
-.couple-leg{position:absolute;top:130px;left:34px;width:20px;height:66px;border-radius:15px;background:linear-gradient(90deg,#100c18,#302035);transform:rotate(5deg);transform-origin:top;animation:coupleWalkLeg 11s ease-in-out infinite}
-.couple-leg.second{left:55px;transform:rotate(-6deg);animation-name:coupleWalkLegBack}
-.couple-person.right .couple-leg{background:#100d18}
-.couple-meet-heart{position:absolute;z-index:4;left:50%;top:46%;font-size:48px;color:#ffb6d0;text-shadow:0 0 14px #ff6eaa,0 0 42px #ff4d9b;opacity:0;transform:translate(-50%,-50%) scale(.1);animation:meetHeart 2s cubic-bezier(.18,.8,.25,1.2) 2.6s infinite}
-.couple-caption{position:absolute;z-index:5;left:12px;right:12px;bottom:22px;text-align:center;color:#ffe5ed;font:italic clamp(20px,4vw,30px) "Playfair Display",serif;letter-spacing:.04em;text-shadow:0 3px 20px #09040b;opacity:0;animation:coupleCaption 1.1s ease 3.6s forwards,captionGlow 3s ease-in-out 4.7s infinite}
-.couple-caption span{color:#f5c9d8}
-.couple-spark{position:absolute;z-index:3;left:50%;top:48%;width:5px;height:5px;border-radius:50%;background:#ffe7f1;box-shadow:0 0 12px 4px #f49abd;opacity:0;animation:coupleSpark 2.3s ease-out 3s infinite}
-.couple-kicker{text-align:center;margin:0 0 18px;color:#e7b8ca;font-size:10px;font-weight:700;letter-spacing:.32em;text-transform:uppercase}
-@keyframes coupleTwinkle{from{opacity:.35;transform:scale(.99)}to{opacity:1;transform:scale(1.02)}}
-@keyframes moonPulse{0%,100%{opacity:.55}50%{opacity:1}}
-@keyframes shootingStar{0%,62%{left:-15%;top:18%;opacity:0}65%{opacity:1}78%{left:115%;top:44%;opacity:0}100%{left:115%;top:44%;opacity:0}}
-@keyframes coupleRomanceLeft{0%,100%{transform:translateX(-105px)}24%{transform:translateX(58px)}34%,68%{transform:translateX(48px) scale(1)}43%,58%{transform:translateX(48px) scale(1.04) rotate(3deg)}78%{transform:translateX(48px) scale(1.01)}}
-@keyframes coupleRomanceRight{0%,100%{transform:translateX(105px)}24%{transform:translateX(-58px)}34%,68%{transform:translateX(-48px) scale(1)}43%,58%{transform:translateX(-48px) scale(1.04) rotate(-3deg)}78%{transform:translateX(-48px) scale(1.01)}}
-@keyframes coupleEmbraceLeft{0%,24%,100%{transform:rotate(-24deg)}36%,68%{transform:rotate(-105deg)}48%,58%{transform:rotate(-115deg)}}
-@keyframes coupleEmbraceRight{0%,24%,100%{transform:rotate(24deg)}36%,68%{transform:rotate(105deg)}48%,58%{transform:rotate(115deg)}}
-@keyframes meetHeart{0%,22%,100%{opacity:0;transform:translate(-50%,-50%) scale(.1)}34%{opacity:1;transform:translate(-50%,-50%) scale(1.6)}44%,70%{opacity:1;transform:translate(-50%,-50%) scale(1);filter:drop-shadow(0 0 25px #ff75ad)}85%{opacity:.7;transform:translate(-50%,-50%) scale(.8)}}
-@keyframes coupleCaption{to{opacity:1;transform:translateY(-4px)}}
-@keyframes coupleSpark{0%,100%{opacity:0;transform:scale(.2)}25%{opacity:1}75%{opacity:.65;transform:scale(9)}}
-@keyframes coupleWalkLeg{0%,22%,100%{transform:rotate(5deg)}8%,16%{transform:rotate(24deg)}12%,20%{transform:rotate(-15deg)}34%,68%{transform:rotate(5deg)}43%,58%{transform:rotate(9deg)}}
-@keyframes coupleWalkLegBack{0%,22%,100%{transform:rotate(-6deg)}8%,16%{transform:rotate(-18deg)}12%,20%{transform:rotate(17deg)}34%,68%{transform:rotate(-6deg)}43%,58%{transform:rotate(-10deg)}}
-@keyframes captionGlow{0%,100%{text-shadow:0 3px 20px #09040b}50%{text-shadow:0 0 12px #ff91b8,0 0 30px #b94b7b}}
-@media(max-width:600px){.couple-cinema{padding:15px 16px 75px}.couple-stage{height:310px;border-radius:26px}.couple-person{bottom:55px;transform-origin:bottom center}.couple-person.left{left:calc(50% - 190px);animation-name:coupleRomanceLeftMobile}.couple-person.right{right:calc(50% - 190px);animation-name:coupleRomanceRightMobile}.couple-ground{bottom:-78px}.couple-moon{top:25px;width:54px;height:54px}}
-@keyframes coupleRomanceLeftMobile{0%,100%{transform:translateX(-65px) scale(.82)}24%{transform:translateX(43px) scale(.82)}34%,68%{transform:translateX(38px) scale(.82)}43%,58%{transform:translateX(38px) scale(.85) rotate(3deg)}78%{transform:translateX(38px) scale(.83)}}
-@keyframes coupleRomanceRightMobile{0%,100%{transform:translateX(65px) scale(.82)}24%{transform:translateX(-43px) scale(.82)}34%,68%{transform:translateX(-38px) scale(.82)}43%,58%{transform:translateX(-38px) scale(.85) rotate(-3deg)}78%{transform:translateX(-38px) scale(.83)}}
-@media(prefers-reduced-motion:reduce){.couple-stage:after,.couple-stars,.couple-person.left,.couple-person.right,.couple-arm,.couple-leg,.couple-meet-heart,.couple-caption,.couple-spark{animation:none!important}.couple-person.left{transform:translateX(48px)}.couple-person.right{transform:translateX(-48px)}.couple-meet-heart,.couple-caption{opacity:1}.couple-meet-heart{transform:translate(-50%,-50%) scale(1)}}
+<style id="red-curtain-cinema">
+.cinema-entry{max-width:1120px;margin:0 auto;padding:28px 22px 100px;position:relative}
+.cinema-invite{width:min(100%,900px);margin:auto;min-height:245px;position:relative;overflow:hidden;border:1px solid rgba(255,220,220,.2);border-radius:22px;background:#050000;box-shadow:0 28px 75px rgba(0,0,0,.55);cursor:pointer;padding:0;color:#fff;display:block}
+.cinema-invite:focus-visible{outline:3px solid #ffd1d1;outline-offset:5px}
+.cinema-mini-screen{position:absolute;inset:13px 16px;background:#030303;border:1px solid rgba(255,220,220,.15);border-radius:12px;display:grid;place-items:center;color:#f5dada;font:italic 22px "Playfair Display",serif;letter-spacing:2px}
+.cinema-mini-screen:after{content:"TAP TO BEGIN";position:absolute;bottom:18px;font:600 10px "DM Sans",sans-serif;letter-spacing:4px;color:#ffd4d4}
+.cinema-mini-curtain{position:absolute;z-index:2;inset:0 0 0 0;background:repeating-linear-gradient(90deg,#570009 0 12px,#8e0717 18px,#c0182a 29px,#74000d 43px,#3d0007 54px);box-shadow:inset 0 0 28px #180003,inset 0 12px 22px rgba(255,130,130,.2)}
+.cinema-mini-curtain:before,.cinema-mini-curtain:after{content:"";position:absolute;top:0;bottom:0;width:16%;background:linear-gradient(90deg,#300006,#a10b1b 35%,#4a0009);filter:drop-shadow(0 0 10px #000)}
+.cinema-mini-curtain:before{left:0}.cinema-mini-curtain:after{right:0}
+.cinema-mini-tassel{position:absolute;z-index:3;right:16px;top:10px;color:#f7d58c;font-size:25px;text-shadow:0 2px 8px #000}
+.cinema-invite-label{text-align:center;margin:17px 0 0;color:#f0d7dc;font:italic 17px "Playfair Display",serif}
+.cinema-fullscreen{position:fixed;z-index:1000000;inset:0;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}
+.cinema-fullscreen.is-active{display:flex}
+.cinema-blackout{position:absolute;inset:0;background:#000;z-index:0}
+.cinema-video-wrap{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:5vh 3vw;background:#000;opacity:0;transition:opacity 1.1s ease}
+.cinema-video-wrap video{display:block;width:auto;height:auto;max-width:100%;max-height:88vh;object-fit:contain;background:#000}
+.cinema-fullscreen.is-playing .cinema-video-wrap{opacity:1}
+.cinema-curtain{position:absolute;z-index:4;top:0;bottom:0;width:51%;background:repeating-linear-gradient(90deg,#3d0007 0 9px,#79000e 13px,#b20b20 22px,#7c0010 31px,#3d0007 43px);box-shadow:inset 0 0 45px rgba(0,0,0,.8),inset 0 14px 35px rgba(255,140,140,.22),0 0 35px #000;transition:transform 4.2s cubic-bezier(.72,0,.22,1)}
+.cinema-curtain.left{left:0;transform-origin:top left;border-right:5px solid #d7a85d}
+.cinema-curtain.right{right:0;transform-origin:top right;border-left:5px solid #d7a85d}
+.cinema-curtain:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 20px,rgba(255,210,210,.12) 25px,transparent 37px);filter:blur(1px)}
+.cinema-curtain:after{content:"";position:absolute;top:0;bottom:0;width:30px;background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(255,180,180,.18),rgba(0,0,0,.4))}
+.cinema-curtain.left:after{right:0}.cinema-curtain.right:after{left:0}
+.cinema-tie{position:absolute;z-index:6;top:48%;width:34px;height:105px;border:3px solid #e8c477;border-radius:50%;filter:drop-shadow(0 2px 7px #000);opacity:0;transition:opacity .8s ease 3.2s}
+.cinema-tie.left{left:calc(51% - 25px)}.cinema-tie.right{right:calc(51% - 25px)}
+.cinema-tie:after{content:"";position:absolute;width:12px;height:12px;background:#f8dda0;border-radius:50%;left:8px;top:43px;box-shadow:0 0 12px #ffd98a}
+.cinema-fullscreen.is-opening .cinema-curtain.left{transform:translateY(-105%)}
+.cinema-fullscreen.is-opening .cinema-curtain.right{transform:translateY(-105%)}
+.cinema-fullscreen.is-opening .cinema-tie{opacity:1}
+.cinema-love-line{position:absolute;z-index:8;left:16px;right:16px;bottom:6vh;text-align:center;color:#fff0f2;font:italic clamp(22px,4vw,42px) "Playfair Display",serif;text-shadow:0 3px 18px #000,0 0 24px rgba(255,50,90,.55);opacity:0;transform:translateY(18px);transition:opacity 1.8s ease,transform 1.8s ease;pointer-events:none}
+.cinema-fullscreen.show-message .cinema-love-line{opacity:1;transform:translateY(0)}
+.cinema-close{position:absolute;z-index:10;top:14px;right:16px;width:42px;height:42px;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:25px;cursor:pointer;opacity:0;transition:opacity .5s}
+.cinema-fullscreen.is-opening .cinema-close{opacity:.85}
+@media(max-width:600px){.cinema-entry{padding:16px 14px 75px}.cinema-invite{min-height:205px}.cinema-video-wrap{padding:4vh 0}.cinema-video-wrap video{width:100%;height:auto;max-height:82vh}.cinema-curtain{width:52%}.cinema-tie.left{left:calc(52% - 24px)}.cinema-tie.right{right:calc(52% - 24px)}}
+@media(prefers-reduced-motion:reduce){.cinema-curtain,.cinema-video-wrap,.cinema-love-line,.cinema-tie{transition-duration:.01ms!important}}
 </style>
 
 </head>
@@ -482,16 +475,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 </section>
 
 
-<section class="couple-cinema reveal" id="forever-couple-scene" aria-label="A romantic animated moment">
- <p class="couple-kicker">TWO HEARTS · ONE LITTLE UNIVERSE</p>
- <div class="couple-stage">
-  <div class="couple-stars"></div><div class="couple-moon"></div><div class="couple-ground"></div>
-  <div class="couple-person left" aria-hidden="true"><i class="couple-head"></i><i class="couple-body"></i><i class="couple-arm"></i><i class="couple-leg"></i><i class="couple-leg second"></i></div>
-  <div class="couple-person right" aria-hidden="true"><i class="couple-head"></i><i class="couple-body"></i><i class="couple-arm"></i><i class="couple-leg"></i><i class="couple-leg second"></i></div>
-  <div class="couple-meet-heart" aria-hidden="true">♥</div><div class="couple-spark" aria-hidden="true"></div>
-  <div class="couple-caption">In every universe, <span>I'd find you.</span> ♡</div>
- </div>
+<section class="cinema-entry reveal" id="forever-couple-scene" aria-label="Romantic cinema surprise">
+ <button class="cinema-invite" id="cinema-start" type="button" aria-label="Open the cinema curtains">
+  <span class="cinema-mini-screen">A LITTLE MOVIE FOR YOU</span><span class="cinema-mini-curtain"></span><span class="cinema-mini-tassel">✦</span>
+ </button>
+ <p class="cinema-invite-label">A little cinema surprise, made with love ♡</p>
 </section>
+<div class="cinema-fullscreen" id="cinema-fullscreen" aria-hidden="true">
+ <div class="cinema-blackout"></div>
+ <div class="cinema-video-wrap"><video id="cinema-video" preload="none" playsinline webkit-playsinline controls>
+  <source src="./public/alioss_28_2025072116490772022~2.mp4" type="video/mp4">
+ </video></div>
+ <div class="cinema-curtain left"></div><div class="cinema-curtain right"></div>
+ <span class="cinema-tie left" aria-hidden="true"></span><span class="cinema-tie right" aria-hidden="true"></span>
+ <div class="cinema-love-line">Stay Always With Me like my Heart 😘</div>
+ <button class="cinema-close" id="cinema-close" type="button" aria-label="Close cinema">×</button>
+</div>
 
 <section class="memory reveal"><div class="memory-box"><div class="envelope"><img src="./public/IMG_20261101_161004.png" alt="" /></div><span class="eyebrow">A NOTE, SEALED WITH LOVE</span><h2 id="note-title">A little note is waiting.</h2><p id="note-copy">No special occasion. No big reason. Just a tiny surprise for someone who makes ordinary days feel special.</p><button class="pill" id="open-note">OPEN YOUR LITTLE NOTE&nbsp; <img class="heart-icon inline-heart" src="./public/IMG_20261101_160735.png" alt="" /></button><div class="signature" id="signature" hidden>with a little more love than words can say ♡</div></div></section>
 </main><footer class="footer"><span>✧</span><p>made of stardust, softness & a little love</p><img class="heart-icon footer-heart" src="./public/IMG_20261101_160735.png" alt="" /></footer></div>
@@ -954,4 +953,37 @@ if(moodButton&&moodSite){moodButton.addEventListener("click",()=>{const soft=moo
 })();
 </script>
 
+<script id="red-curtain-cinema-logic">
+(()=>{
+ const start=document.getElementById('cinema-start');
+ const stage=document.getElementById('cinema-fullscreen');
+ const video=document.getElementById('cinema-video');
+ const close=document.getElementById('cinema-close');
+ if(!start||!stage||!video||!close)return;
+ let openTimer, messageTimer;
+ const closeCinema=()=>{
+  clearTimeout(openTimer);clearTimeout(messageTimer);
+  video.pause();video.currentTime=0;video.removeAttribute('src');video.querySelector('source').src='./public/alioss_28_2025072116490772022~2.mp4';video.load();
+  stage.classList.remove('is-active','is-opening','is-playing','show-message');
+  stage.setAttribute('aria-hidden','true');document.body.style.overflow='';
+ };
+ start.addEventListener('click',()=>{
+  stage.classList.add('is-active');stage.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  stage.classList.remove('is-opening','is-playing','show-message');
+  video.load();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+   stage.classList.add('is-opening');
+   openTimer=setTimeout(()=>{
+    stage.classList.add('is-playing');
+    const playPromise=video.play();
+    if(playPromise&&playPromise.catch)playPromise.catch(()=>{video.setAttribute('controls','');});
+    messageTimer=setTimeout(()=>stage.classList.add('show-message'),1600);
+   },3900);
+  }));
+ });
+ close.addEventListener('click',closeCinema);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&stage.classList.contains('is-active'))closeCinema();});
+ video.addEventListener('ended',()=>stage.classList.add('show-message'));
+})();
+</script>
 </body></html>
